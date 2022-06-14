@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace Livraria.Models
+namespace Livraria.Data.Dtos
 {
-    public class Livro 
+    public class ReadLivroDto
     {
         [Key]
         [Required]
@@ -10,10 +11,9 @@ namespace Livraria.Models
         [Required(ErrorMessage = "O campo Título é obrigatório")]
         public string Titulo { get; set; }
         [Required(ErrorMessage = "O campo Autor é obrigatório")]
-        public Autor Autor { get; set; }
+        public string Autor { get; set; }
         [Required(ErrorMessage = "O campo Gênero é obrigatório")]
         public string Genero { get; set; }
-        [Required]
-        public Editora Editora { get; set; }
+        public DateTime HoraDaConsulta { get; set; }
     }
 }
